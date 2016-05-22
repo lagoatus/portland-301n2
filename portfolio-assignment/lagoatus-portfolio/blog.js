@@ -54,10 +54,12 @@ Projects.fetchall = function() {
         );
     projectView.initIndexPage();
   }
-  $.getJSON('data/blogobjects.json', function(datas) {
-    Projects.loadAll(datas);
-    console.log(datas);
-    localStorage.setItem('rawData', JSON.stringify(datas));
-  });
-  projectView.initIndexPage();
+  else {
+    $.getJSON('data/blogobjects.json', function(datas) {
+      Projects.loadAll(datas);
+      console.log(datas);
+      localStorage.setItem('rawData', JSON.stringify(datas));
+    });
+    projectView.initIndexPage();
+  }
 };
