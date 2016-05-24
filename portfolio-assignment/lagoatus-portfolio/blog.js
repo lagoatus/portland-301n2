@@ -37,6 +37,19 @@ Projects.loadAll = function(datas) {
 };
 
 Projects.fetchall = function() {
+<<<<<<< HEAD
+=======
+  //
+  // $.ajax({
+  //   type: 'GET',
+  //   url: 'http://rest.learncode.academy/api/aaroy/woo',
+  //   success: function(data) {
+  //     Projects.loadAll(data);
+  //     localStorage.setItem('tawData', JSON.stringify(data));
+  //     console.log('This ajax works', data); //returns friend id#1
+  //   }
+  // });
+>>>>>>> 4977004bdcd29c76b849867e360ca6c5b5759fc0
 
   if (localStorage.rawData) {
     Projects.loadAll(
@@ -46,6 +59,7 @@ Projects.fetchall = function() {
   }
   else {
     $.getJSON('data/blogobjects.json', function(datas) {
+<<<<<<< HEAD
 
       console.log(datas);
       localStorage.setItem('rawData', JSON.stringify(datas));
@@ -53,5 +67,12 @@ Projects.fetchall = function() {
       projectView.initIndexPage();
     });
 
+=======
+      Projects.loadAll(datas);
+      console.log(datas);
+      localStorage.setItem('rawData', JSON.stringify(datas));
+    });
+    projectView.initIndexPage();
+>>>>>>> 4977004bdcd29c76b849867e360ca6c5b5759fc0
   }
 };
