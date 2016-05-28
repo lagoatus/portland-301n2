@@ -12,6 +12,7 @@
     this.role = input.role;
     this.projectUrl = input.projectUrl;
     this.completionDate = input.completionDate;
+    this.DaystoComplete = input.DaystoComplete;
     this.body = input.body;
 
   }
@@ -56,16 +57,15 @@
     }
   };
 
-  // Projects.allHours = function() {
-  //   return Projects.all.map(function(project) {
-  //     return project.Hours;
-  //   })
-  //   .reduce(function(accumulator, theProject) {
-  //     return accumulator + theProject.Hours;
-  //   }, 0);// Don't forget to read the docs on map and reduce!
-  // };
-  
-  //  "Days to complete": 14,
+  Projects.allDays = function() {   // I decided to REDUCE(); a Property,
+    // which I just created and added to my Object, that contains
+    //the theoretical number of class days that it took to complete all the projects.
+    return Projects.all.map(function(project) {
+      return project.DaystoComplete;})
+      .reduce(function(sum, i) {
+        return sum + i;
+      });
+  };
 
 
   module.Projects = Projects;

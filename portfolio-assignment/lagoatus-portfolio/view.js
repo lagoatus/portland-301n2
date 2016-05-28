@@ -26,14 +26,13 @@
       Projects.all.forEach(function(a) {
         $('#projects').append(a.toHtml());
       });
-
+      $('#stats .words').text(Projects.allDays());
     });
   };
 
   //viewFunctions.handleBurgClick();
   viewFunctions.handleAboutClick();
   viewFunctions.handleHomeClick();
-
 
   $(function(){ // Code source: https://github.com/mattboldt/typed.js/
     $('.element').typed({
@@ -42,6 +41,6 @@
     });
   });
 
-  module.articleView = articleView;
-  //module.projectView = projectView;
+  module.viewFunctions = viewFunctions;
+  module.projectView = projectView;
 })(window);
