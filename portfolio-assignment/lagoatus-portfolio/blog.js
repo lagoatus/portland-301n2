@@ -1,9 +1,5 @@
 
 
-// NOTE: MOST OF THE FUNCTIONS AND JQUERY STRUCTURE THAT I USED ARE HEAVILY
-// BASED-ON THE PAIR-PROGRAMMING PROJECT TEMPLATE. I REWROTE ALL OF IT BY HAND TO LEARN,
-// OMITTED ELEMENTS NOT NECESSARY TO THIS PORTFOLIO, ALTERED MOST NAMING SYSTEMS
-// AS WELL AS ADDED NEW ELEMENTS AND PROPERTIES AS NEEDED.
 (function (module) {
   Projects.all = [];
 
@@ -32,7 +28,7 @@
 
 
   Projects.loadAll = function(datas) {
-    Projects.all = datas.map(function(i) {
+    Projects.all = datas.map(function(i) { // Use map() to push rawData into a new array object
       return new Projects(i);
     });
   };
@@ -43,23 +39,21 @@
       Projects.loadAll(
          JSON.parse(localStorage.getItem('rawData'))
           );
-      // projectView.initIndexPage();
       callBack();
     }
     else {
       $.getJSON('data/blogobjects.json', function(datas) {
         localStorage.setItem('rawData', JSON.stringify(datas));
         Projects.loadAll(datas);
-        // projectView.initIndexPage();
         callBack();
       });
-
     }
   };
 
   Projects.allDays = function() {   // I decided to REDUCE(); a Property,
     // which I just created and added to my Object, that contains
     //the theoretical number of class days that it took to complete all the projects.
+    // It is shown in the footer.
     return Projects.all.map(function(project) {
       return project.DaystoComplete;})
       .reduce(function(sum, i) {
