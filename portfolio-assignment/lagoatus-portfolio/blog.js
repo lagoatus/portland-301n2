@@ -35,6 +35,7 @@
     });
   };
 
+<<<<<<< HEAD
   Projects.fetchall = function(callBack) {
 
     if (localStorage.rawData) {
@@ -66,3 +67,22 @@
 
   module.Projects = Projects;
 })(window);
+=======
+Projects.fetchall = function() {
+
+  if (localStorage.rawData) {
+    Projects.loadAll(
+       JSON.parse(localStorage.getItem('rawData'))
+        );
+    projectView.initIndexPage();
+  }
+  else {
+    $.getJSON('data/blogobjects.json', function(datas) {
+      localStorage.setItem('rawData', JSON.stringify(datas));
+      Projects.loadAll(datas);
+      projectView.initIndexPage();
+    });
+
+  }
+};
+>>>>>>> e91e3a6c75ed2621737167b3991698f5f8c9386d
