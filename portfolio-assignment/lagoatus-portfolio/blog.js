@@ -55,7 +55,7 @@
   Projects.allDays = function() {   // I decided to REDUCE(); a Property,
     // which I just created and added to my Object, that contains
     //the theoretical number of class days that it took to complete all the projects.
-    // It is shown in the footer.
+    //This is then placed in the footer of the page.
     return Projects.all.map(function(project) {
       return project.DaystoComplete;})
       .reduce(function(sum, i) {
