@@ -1,0 +1,132 @@
+/***
+ * Base rules
+ **/
+
+body {
+  background-color: #010101;
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+main {
+  text-align: center;
+  font-family: 'Courier', sans-serif;
+  color: #010101;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Poiret One', sans-serif;
+  font-weight: bold;
+}
+
+#title-headline {
+  font-size: 66px;
+  color: #E8E2CC;
+}
+
+a {
+  text-decoration: none;
+  color: #AC1603;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+input,
+textarea {
+  display: block;
+  margin: 5px;
+  width: 90%;
+}
+
+/***
+ * Layout rules
+ **/
+
+#title-headline {
+  display: inline-block;
+  padding: 0;
+  margin: 20px auto;
+}
+
+#nav-links {
+  display: inline-block;
+  min-width: 100%;
+  padding: 0px;
+  cursor: pointer;
+}
+
+#nav-links li {
+  background-color: #AC1603;
+  padding: 8px;
+}
+
+#nav-links li:hover {
+  opacity: 0.5;
+}
+
+#nav-links a {
+  color: white;
+}
+
+#about {
+  display: none;
+  margin-top: 100px;
+}
+
+.about-container {
+  color: #E8E2CC;
+  width: 75%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#about img {
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 100%;
+}
+
+/* when width is less than 500 */
+
+@media all and (max-width: 499px) {
+  #nav-links li {
+    display: block;
+    margin: 1px;
+    text-align: left;
+  }
+
+  #about img {
+    max-width: 40%;
+  }
+
+}
+
+/* when width is more than 500 */
+
+@media all and (min-width: 500px) {
+  #nav-links li {
+    display: inline-block;
+    margin: 2px;
+    text-align: center;
+  }
+
+  #about img {
+    max-width: 20%;
+  }
+}
