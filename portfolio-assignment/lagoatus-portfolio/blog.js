@@ -36,6 +36,10 @@
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 048378bdf0b24b448052c39dae610507862a96f6
   Projects.fetchall = function(callBack) {
 
     if (localStorage.rawData) {
@@ -64,6 +68,12 @@
       });
   };
 
+<<<<<<< HEAD
+=======
+
+  module.Projects = Projects;
+})(window);
+>>>>>>> 048378bdf0b24b448052c39dae610507862a96f6
 
   module.Projects = Projects;
 })(window);
