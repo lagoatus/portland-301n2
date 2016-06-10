@@ -1,6 +1,4 @@
-
-
-(function (module) {
+(function (module) { // Addition of IIFE to incapsilate functions and prevent scope issues
   Projects.all = [];
 
   function Projects(input) {
@@ -10,12 +8,9 @@
     this.completionDate = input.completionDate;
     this.DaystoComplete = input.DaystoComplete;
     this.body = input.body;
-
   }
 
   Projects.prototype.toHtml = function() {
-  // var $newProject = $('article.template').clone();
-
     var articleTemplate = $('#template').html();
     var compiledTemplate = Handlebars.compile(articleTemplate);
 
@@ -25,7 +20,6 @@
     return compiledTemplate(this);
 
   };
-
 
   Projects.loadAll = function(datas) {
     Projects.all = datas.map(function(i) { // Use map() to push rawData into a new array object
@@ -51,13 +45,19 @@
   };
 
   Projects.allDays = function() {
+<<<<<<< HEAD:portfolio-assignment/lagoatus-portfolio/scripts/blog.js
     return Projects.all.map(function(project) {
+=======
+    return Projects.all.map(function(project) { // using map functionality to
+      // cycle through my projects array and return the DaystoComplete property in a new array.
+>>>>>>> 03e87effd900d8eafbc21e7225b273e2ccbc29c2:portfolio-assignment/lagoatus-portfolio/blog.js
       return project.DaystoComplete;})
-      .reduce(function(sum, i) {
+      .reduce(function(sum, i) { //Now that I have a new array with DaystoComplete I use
+        // the reduce function to tally an total of the number of hours worked on all projects.
         return sum + i;
       });
   };
 
-
-  module.Projects = Projects;
+  module.Projects = Projects; // here I my Projects equal to the IIFE parameter so that
+  // my functions are passed as a parameter and avaible outside the window scope.
 })(window);
