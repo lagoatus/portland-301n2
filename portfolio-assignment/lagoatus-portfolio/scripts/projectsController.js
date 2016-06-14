@@ -4,8 +4,7 @@
   projectsController.index = function() {
     console.log('articles controller');
     Projects.fetchall(projectView.initIndexPage);
-
-    $('#about').hide();
+    $('.tab-content').hide();
     $('#projects').show();
 
   };
