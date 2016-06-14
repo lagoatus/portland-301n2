@@ -5,8 +5,9 @@
     console.log('articles controller');
     Projects.fetchall(projectView.initIndexPage);
 
-    $('.tab-content').hide();
+    $('#about').hide();
     $('#projects').show();
+
   };
 
   module.projectsController = projectsController;
